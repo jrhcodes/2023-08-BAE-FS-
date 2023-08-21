@@ -28,12 +28,10 @@ public class Student {
             return secretNickName;
         }
 
-        upgradeGrade()
+        void upgradeGrade(){};
 
 
-        downgradeGrade()
+        void downgradeGrade(){};
 
-
-    }
 
 }
