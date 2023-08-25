@@ -7,11 +7,12 @@ public class Student {
     String secretNickName = "MySecretNickName";
 
     public Student(final String name, final Grade grade, final Group group) {
-        if( name == null || name.isBlank() ) {
+        if (name == null || name.isBlank()) {
             throw new IllegalArgumentException("Student(): Blank or null student name provided");
-        };
+        }
+        ;
 
-        if( grade == null){
+        if (grade == null) {
             throw new IllegalArgumentException("Student(): Null grade provided");
         }
 
