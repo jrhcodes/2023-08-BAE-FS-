@@ -26,5 +26,24 @@ public class StudentTest {
         assertEquals(1, student.getGrade().getValue());
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {2, 3, 4, 1})
+    void testDowngradeGradeWhenNotMinGrade(int testGrade)
+    {
+        Student student = new Student("Johnny", new Grade(testGrade), Group.A);
+        assertTrue(student.downgradeGrade());
+        assertEquals(testGrade+1, student.getGrade().getValue());
+    };
+
+    @Test
+    void testDowngradeGradeWhenMinGrade()
+    {
+        Student student = new Student("Johnny", new Grade(5), Group.A);
+        assertFalse(student.downgradeGrade());
+        assertEquals(5, student.getGrade().getValue());
+    }
+
+
+
 
 }
