@@ -60,7 +60,7 @@ public class GradeTest {
     @ValueSource(ints = { 2, 3, 4, 5 } )
     void testIncrease(int testGrade) {
         Grade grade= new Grade(testGrade);
-        assertTrue(grade.increase());
+        assertTrue(grade.increase(), "True not returned");
         assertEquals(testGrade-1, grade.getValue());
     };
 
