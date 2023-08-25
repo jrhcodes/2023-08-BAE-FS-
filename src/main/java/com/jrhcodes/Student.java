@@ -1,4 +1,7 @@
-package src.main.java;
+package com.jrhcodes;
+
+import com.jrhcodes.Grade;
+import com.jrhcodes.Group;
 
 public class Student {
     String name;

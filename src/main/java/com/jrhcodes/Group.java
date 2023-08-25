@@ -1,4 +1,4 @@
-package src.main.java;
+package com.jrhcodes;
 
 public enum Group {
     A,

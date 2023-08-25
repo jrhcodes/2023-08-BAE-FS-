@@ -1,4 +1,4 @@
-package src.main.java;
+package com.jrhcodes;
 
 public class Grade {
     private int value;
@@ -20,10 +20,10 @@ public class Grade {
 
     public boolean increase() {
         if (isMaxGrade()) {
-            --value;
-            return true;
+            return false;
         }
-        return false;
+        --value;
+        return true;
     }
 
     public boolean decrease() {
