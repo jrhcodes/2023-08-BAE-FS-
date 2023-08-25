@@ -1,37 +1,35 @@
 package src.main.java;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 public class Student {
-        String name;
-        String grade;
-        String group;
-        String secretNickName = "MySecretNickName";
+    String name;
+    Grade grade;
+    Group group;
+    String secretNickName = "MySecretNickName";
 
-        public Student(final String name, final String grade, final String group) {
-        }
+    public Student(final String name, final Grade grade, final Group group) {
+        this.name = name;
+        this.grade = grade;
+        this.group = group;
+    }
 
-        public String getName() {
-            return name;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public String getGrade() {
-            return grade;
-        }
+    public Grade getGrade() {
+        return grade;
+    }
 
-        public String getGroup() {
-            return group;
-        }
+    public Group getGroup() {
+        return group;
+    }
 
-        public String getSecretNickName() {
-            return secretNickName;
-        }
+    public boolean upgradeGrade() {
+        return grade.increase();
+    }
 
-        void upgradeGrade(){};
-
-
-        void downgradeGrade(){};
-
+    public boolean downgradeGrade() {
+        return grade.decrease();
+    }
 
 }
