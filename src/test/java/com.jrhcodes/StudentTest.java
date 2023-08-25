@@ -11,7 +11,7 @@ public class StudentTest {
 
     @ParameterizedTest
     @ValueSource(ints = {2, 3, 4, 5})
-    void testUpgradeGradeWhenNotMaxGrade(int testGrade)
+    public void testUpgradeGradeWhenNotMaxGrade(int testGrade)
     {
         Student student = new Student("Johnny", new Grade(testGrade), Group.A);
         assertTrue(student.upgradeGrade());
@@ -19,7 +19,7 @@ public class StudentTest {
     };
 
     @Test
-    void testUpgradeGradeWhenMaxGrade()
+    public void testUpgradeGradeWhenMaxGrade()
     {
         Student student = new Student("Johnny", new Grade(1), Group.A);
         assertFalse(student.upgradeGrade());
@@ -28,7 +28,7 @@ public class StudentTest {
 
     @ParameterizedTest
     @ValueSource(ints = {2, 3, 4, 1})
-    void testDowngradeGradeWhenNotMinGrade(int testGrade)
+    public void testDowngradeGradeWhenNotMinGrade(int testGrade)
     {
         Student student = new Student("Johnny", new Grade(testGrade), Group.A);
         assertTrue(student.downgradeGrade());
@@ -36,12 +36,18 @@ public class StudentTest {
     };
 
     @Test
-    void testDowngradeGradeWhenMinGrade()
+    public void testDowngradeGradeWhenMinGrade()
     {
         Student student = new Student("Johnny", new Grade(5), Group.A);
         assertFalse(student.downgradeGrade());
         assertEquals(5, student.getGrade().getValue());
     }
+
+     @Test
+     public void testConstructorNullNameException() {
+        assertThrowsExactly(  IllegalArgumentException.class,
+                () -> new Student(null, new Grade(1), Group.A) );
+     }
 
 
 

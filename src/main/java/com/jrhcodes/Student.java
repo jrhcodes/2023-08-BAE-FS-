@@ -1,8 +1,5 @@
 package com.jrhcodes;
 
-import com.jrhcodes.Grade;
-import com.jrhcodes.Group;
-
 public class Student {
     String name;
     Grade grade;
@@ -10,6 +7,14 @@ public class Student {
     String secretNickName = "MySecretNickName";
 
     public Student(final String name, final Grade grade, final Group group) {
+        if( name == null || name.isBlank() ) {
+            throw new IllegalArgumentException("Student(): Blank or null student name provided");
+        };
+
+        if( grade == null){
+            throw new IllegalArgumentException("Student(): Null grade provided");
+        }
+
         this.name = name;
         this.grade = grade;
         this.group = group;
