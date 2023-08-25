@@ -5,7 +5,7 @@ public enum Group {
     B,
     C,
     D,
-    E
+    E //
 }
 
 
