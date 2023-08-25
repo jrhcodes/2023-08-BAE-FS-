@@ -55,5 +55,11 @@ public class StudentTest {
                 () -> new Student(emptyString, new Grade(1), Group.A) );
     }
 
+    @Test
+    public void testConstructorNullGradeException() {
+        assertThrowsExactly(  IllegalArgumentException.class,
+                () -> new Student("Freddy", null, Group.A) );
+    }
+
 
 }
