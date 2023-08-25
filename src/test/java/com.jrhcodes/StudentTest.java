@@ -49,7 +49,11 @@ public class StudentTest {
                 () -> new Student(null, new Grade(1), Group.A) );
      }
 
-
+    @ParameterizedTest @ValueSource(strings = {"", " ", "                "})
+    public void testConstructorEmptyNameException(String emptyString) {
+        assertThrowsExactly(  IllegalArgumentException.class,
+                () -> new Student(emptyString, new Grade(1), Group.A) );
+    }
 
 
 }
